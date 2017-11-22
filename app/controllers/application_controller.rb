@@ -39,7 +39,7 @@ class ApplicationController < Sinatra::Base
     @recipe.update(ingredients: params[:ingredients])
     @recipe.update(cook_time: params[:cook_time])
     @recipe.save
-    redirect to ('/recipes/@recipe.id')
+    redirect to ("/recipes/#{@recipe.id}")
   end
 
   delete '/recipes/:id/delete' do
